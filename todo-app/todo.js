@@ -41,13 +41,17 @@ summary.textContent = `You have ${incompleteTodos.length} left`
 document.querySelector('body').appendChild(summary)
 
 
-todos.forEach(function(p) {
+todos.forEach(function(t) {
     const p = document.createElement('p')
-    p.textContent = todos.text
+    t.textContent = todos.text
     document.querySelector('body').appendChild(p)
 })
 
 document.querySelector('#remove-todo').addEventListener('click', function(){
     console.log('Message removed')
+})
+
+document.querySelector('#todo-text').addEventListener('input', function(e) {
+    console.log(e.target.value)
 })
 
