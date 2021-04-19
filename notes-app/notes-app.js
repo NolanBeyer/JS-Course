@@ -1,59 +1,14 @@
-const notes = [ {
-    title: 'My next trip',
-    body: 'Somewhere to fix my body'
-}, {
-    title: 'Habbits to work on',
-    body: 'Sleep schedule'
-}, {
-    title: 'Office modifications',
-    body: 'Get a good chair'
-}]
+//* DOM - Document Object Model
 
+//* Query and remove
+const p = document.querySelector('p')
+// p.remove()
 
+//* Query all and remove
+const ps = document.querySelectorAll('p')
 
-// document.querySelector('button').addEventListener('click', function(e) {
-//     e.target.textContent = 'new todo'
-// })
-
-const filters = {
-    searchText: ''
-}
-
-renderNotes = function(notes, filters) {
-    const filteredNotes = notes.filter(function(note) {
-        return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
-
-    document.querySelector('#notes').innerHTML = ''
-
-    
-    filteredNotes.forEach(function(note) {
-        const noteElement = document.createElement('p')
-        noteElement.textContent = note.title
-        document.querySelector('#notes').appendChild(noteElement)
-    })
-}
-
-renderNotes(notes, filters)
-
-
-const newButton = document.createElement('button')
-
-newButton.textContent = 'add new todo'
-
-document.querySelector('body').appendChild(newButton)
-
-document.querySelector('button').addEventListener('click', function(e) {
-    e.target.textContent = 'new todo added'
+ps.forEach(function (p) {
+  p.textContent = '****'
+  //   console.log(p.textContent)
+  //   p.remove()
 })
-
-document.querySelector('#search-text').addEventListener('input', function(e) {
-    filters.searchText = e.target.value 
-    renderNotes(notes, filters)
-})
-
-
-
-
-
-
