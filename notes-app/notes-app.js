@@ -21,9 +21,13 @@ document.querySelector('#remove-all').addEventListener('click', function (e) {
   e.target.textContent = 'Notes deleted'
 })
 
-document.querySelectorAll('.note').forEach(function (note) {
-  note.remove()
+document.querySelector('#search-text').addEventListener('input', function (e) {
+  console.log(e.target.value)
 })
+
+// document.querySelectorAll('.note').forEach(function (note) {
+//   note.remove()
+// })
 
 //* DOM - Document Object Model
 

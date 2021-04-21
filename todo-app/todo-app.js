@@ -29,6 +29,10 @@ document.querySelector('#add-todo').addEventListener('click', function (e) {
   e.target.textContent = 'todo added'
 })
 
+document.querySelector('#new-todo').addEventListener('input', function (e) {
+  console.log(e.target.value)
+})
+
 //* You have two todos left
 
 // const incompleteTodos = todos.filter((todo) => !todo.completed)
